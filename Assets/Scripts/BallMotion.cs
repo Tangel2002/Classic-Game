@@ -36,8 +36,11 @@ public class BallMotion : MonoBehaviour
         }
 
         ballSpeed = Random.Range(minSpeed, maxSpeed);
-        newDirection.x += Random.Range(newDirection.x * -angleVariation, newDirection.x * angleVariation);
-        newDirection.z += Random.Range(newDirection.y * -angleVariation, newDirection.y * angleVariation);
+        //changing rotation formula: https://matthew-brett.github.io/teaching/rotation_2d.html
+        float changeInDegrees = Random.Range(-angleVariation, angleVariation);
+        newDirection.x = Mathf.Cos(changeInDegrees * newDirection.x) - Mathf.Sin(changeInDegrees * newDirection.y);
+        newDirection.y = Mathf.Sin(changeInDegrees * newDirection.x) - Mathf.Cos(changeInDegrees * newDirection.y);
+
         setDirection(newDirection);
     }
     public void setDirection(Vector3 newDirection) {

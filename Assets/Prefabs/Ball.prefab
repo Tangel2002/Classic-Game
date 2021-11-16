@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballSpeed: 13
   speedVariation: 0.2
-  angleVariation: 0.1
+  angleVariation: 5
 --- !u!54 &5904494800985816793
 Rigidbody:
   m_ObjectHideFlags: 0

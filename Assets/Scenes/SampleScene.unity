@@ -2356,7 +2356,7 @@ GameObject:
   - component: {fileID: 1813696824}
   m_Layer: 0
   m_Name: Paddle 2
-  m_TagString: horizontalPaddle
+  m_TagString: verticalPaddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

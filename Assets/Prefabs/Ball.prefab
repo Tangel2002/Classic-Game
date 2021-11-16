@@ -112,6 +112,7 @@ MonoBehaviour:
   ballSpeed: 13
   speedVariation: 0.2
   angleVariation: 5
+  currentDirection: {x: 0, y: 0, z: 0}
 --- !u!54 &5904494800985816793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,5 +127,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0

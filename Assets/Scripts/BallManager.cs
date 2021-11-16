@@ -7,7 +7,7 @@ public class BallManager : MonoBehaviour
     public float startTime = 2f;
     public GameObject ballPrefab;
     public Vector3[] spawnPositions = {Vector3.zero};
-    public Vector3[] spawnDirections = {Vector3.forward}; //LENGTH MUST BE EQUAL TO SPAWNPOSITIONS
+    public Vector3[] spawnDirections = {Vector3.up}; //LENGTH MUST BE EQUAL TO SPAWNPOSITIONS
     private GameObject currentBall = null;
     void Start()
     {

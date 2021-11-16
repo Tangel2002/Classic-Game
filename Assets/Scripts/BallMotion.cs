@@ -25,19 +25,19 @@ public class BallMotion : MonoBehaviour
         GameObject obj = other.gameObject;
         Vector3 newDirection = currentDirection;
         if (obj.CompareTag("verticalPaddle")) {
-            newDirection.z = newDirection.z * -1;
+            newDirection.y = newDirection.y * -1;
         }
         else if (obj.CompareTag("horizontalPaddle")) {
             newDirection.x = newDirection.x * -1;
         }
         else if (obj.CompareTag("cornerPaddle")) {
-            newDirection.z = newDirection.z * -1;
+            newDirection.y = newDirection.y * -1;
             newDirection.x = newDirection.x * -1;
         }
 
         ballSpeed = Random.Range(minSpeed, maxSpeed);
         newDirection.x += Random.Range(newDirection.x * -angleVariation, newDirection.x * angleVariation);
-        newDirection.z += Random.Range(newDirection.z * -angleVariation, newDirection.z * angleVariation);
+        newDirection.z += Random.Range(newDirection.y * -angleVariation, newDirection.y * angleVariation);
         setDirection(newDirection);
     }
     public void setDirection(Vector3 newDirection) {

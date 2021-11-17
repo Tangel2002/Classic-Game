@@ -13,7 +13,7 @@ public class BallManager : MonoBehaviour
     {
         StartCoroutine(SpawnBall(startTime, Random.Range(0, spawnPositions.Length)));
     }
-    private IEnumerator SpawnBall(float time, int positionIndex) {
+    public IEnumerator SpawnBall(float time, int positionIndex) {
         //Position must be within size of vector array, to avoid out of bounds exception
         yield return (new WaitForSeconds(time));
         GameObject newBall = Instantiate(ballPrefab, spawnPositions[positionIndex], Quaternion.identity);

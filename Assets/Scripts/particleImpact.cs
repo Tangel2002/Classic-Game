@@ -8,25 +8,32 @@ public class particleImpact : MonoBehaviour
 
     public Transform ball;
     public GameObject prtcle;
+    private Vector3 t;
+    private Quaternion rotation;
     //public GameObject paddle;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("collided");
-        Vector3 t = new Vector3(-collision.rigidbody.transform.rotation.x, -collision.rigidbody.transform.rotation.y, -collision.rigidbody.transform.rotation.z);
+        //Vector3 t;
+        if(collision.rigidbody.transform.position.y == 10)
+        {
+            rotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);
+        }
+        if(collision.rigidbody.transform.position.y == -10)
+        {
+            rotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
+        }
+        if(collision.rigidbody.transform.position.x == 10)
+        {
+            rotation = Quaternion.Euler(0.0f, 0.0f, -90.0f);
+        }
+        if (collision.rigidbody.transform.position.x == -10)
+        {
+            rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
+        }
+
         ContactPoint contact = collision.contacts[0];
-        Quaternion rotation = Quaternion.FromToRotation(contact.normal, t);
+        
         Vector3 pos = contact.point;
         Instantiate(prtcle, pos, rotation);
     }

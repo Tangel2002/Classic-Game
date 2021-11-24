@@ -115,6 +115,7 @@ MonoBehaviour:
   speedVariation: 0.2
   angleVariation: 5
   currentDirection: {x: 0, y: 0, z: 0}
+  manager: {fileID: 0}
 --- !u!54 &5904494800985816793
 Rigidbody:
   m_ObjectHideFlags: 0

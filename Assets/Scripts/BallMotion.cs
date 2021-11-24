@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class BallMotion : MonoBehaviour
 {
-    int P1Score = 0;
-    int P2Score = 0;
-
     public float ballSpeed = 5f;
     public float speedVariation = 0.5f;
     public float angleVariation = 0.05f;
     public Vector3 currentDirection = Vector3.zero;
-    public BallManager manager;
     private float minSpeed, maxSpeed;
     private int collisions = 0;
     private void Start()
     {
-        Debug.Log("ball created");
         minSpeed = ballSpeed * (1 - speedVariation);
         maxSpeed = ballSpeed * (1 + speedVariation);
     }
@@ -39,23 +34,12 @@ public class BallMotion : MonoBehaviour
         {
             newDirection.x = -newDirection.x;
         }
+        /*else if (obj.CompareTag("cornerPaddle"))
+        {
+            newDirection.y = -newDirection.x;
+            newDirection.x = -newDirection.y;
+        }*/
         //until we create the goal area
-        else if (obj.CompareTag("P1Goal")) 
-        {
-            P2Score++;
-            Debug.Log(P2Score);
-            manager.SpawnBallWrapper(2, Random.Range(2, 3));
-            Destroy(gameObject);
-            
-            
-        }
-        else if (obj.CompareTag("P2Goal"))
-        {
-            P1Score++;
-            Debug.Log(P1Score);
-            manager.SpawnBallWrapper(2, Random.Range(0, 1));
-            Destroy(gameObject);
-        }
         else {
             newDirection = -newDirection;
         }

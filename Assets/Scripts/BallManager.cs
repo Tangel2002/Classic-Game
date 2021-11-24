@@ -11,22 +11,12 @@ public class BallManager : MonoBehaviour
     private GameObject currentBall = null;
     void Start()
     {
-        SpawnBallWrapper(startTime, Random.Range(0, spawnPositions.Length));
-    }
-    public void SpawnBallWrapper(float startingTime, int positionIndex) {
-        StartCoroutine(SpawnBall(startingTime, positionIndex));
+        StartCoroutine(SpawnBall(startTime, Random.Range(0, spawnPositions.Length)));
     }
     public IEnumerator SpawnBall(float time, int positionIndex) {
         //Position must be within size of vector array, to avoid out of bounds exception
         yield return (new WaitForSeconds(time));
         GameObject newBall = Instantiate(ballPrefab, spawnPositions[positionIndex], Quaternion.identity);
-        BallMotion script = newBall.GetComponent<BallMotion>();
-        if (newBall)
-        {
-            Debug.Log("Ball Exists");
-        }
-        script.setDirection(spawnDirections[positionIndex]);
-        script.manager = this;
-        Debug.Log("spawnball");
+        newBall.GetComponent<BallMotion>().setDirection(spawnDirections[positionIndex]);
     }
 }

@@ -9,7 +9,6 @@ public class BallManager : MonoBehaviour
     public GameObject ballPrefab;
     public Vector3[] spawnPositions = {Vector3.zero};
     public Vector3[] spawnDirections = {Vector3.up}; //LENGTH MUST BE EQUAL TO SPAWNPOSITIONS
-    private GameObject currentBall = null;
     void Start()
     {
         SpawnBallWrapper(startTime, Random.Range(0, spawnPositions.Length));

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
+    public ScoreBoard Scoreboard;
     public float startTime = 2f;
     public GameObject ballPrefab;
     public Vector3[] spawnPositions = {Vector3.zero};
@@ -21,12 +22,7 @@ public class BallManager : MonoBehaviour
         yield return (new WaitForSeconds(time));
         GameObject newBall = Instantiate(ballPrefab, spawnPositions[positionIndex], Quaternion.identity);
         BallMotion script = newBall.GetComponent<BallMotion>();
-        if (newBall)
-        {
-            Debug.Log("Ball Exists");
-        }
         script.setDirection(spawnDirections[positionIndex]);
         script.manager = this;
-        Debug.Log("spawnball");
     }
 }

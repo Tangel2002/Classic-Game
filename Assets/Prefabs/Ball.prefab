@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90a02c9f92def141978d1ebb637a263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  board: {fileID: 0}
   ballSpeed: 13
   speedVariation: 0.2
   angleVariation: 5

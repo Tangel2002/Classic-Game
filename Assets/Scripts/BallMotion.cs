@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BallMotion : MonoBehaviour
 {
-    int P1Score = 0;
-    int P2Score = 0;
+    //public GameObject scoreboard;
+    //public ScoreBoard Scoreboard;
 
     public float ballSpeed = 5f;
     public float speedVariation = 0.5f;
@@ -16,7 +16,6 @@ public class BallMotion : MonoBehaviour
     private int collisions = 0;
     private void Start()
     {
-        Debug.Log("ball created");
         minSpeed = ballSpeed * (1 - speedVariation);
         maxSpeed = ballSpeed * (1 + speedVariation);
     }
@@ -42,17 +41,14 @@ public class BallMotion : MonoBehaviour
         //until we create the goal area
         else if (obj.CompareTag("P1Goal")) 
         {
-            P2Score++;
-            Debug.Log(P2Score);
+            manager.Scoreboard.Player2Scored();
             manager.SpawnBallWrapper(2, Random.Range(2, 3));
             Destroy(gameObject);
-            
-            
+
         }
         else if (obj.CompareTag("P2Goal"))
         {
-            P1Score++;
-            Debug.Log(P1Score);
+            manager.Scoreboard.Player1Scored();
             manager.SpawnBallWrapper(2, Random.Range(0, 1));
             Destroy(gameObject);
         }

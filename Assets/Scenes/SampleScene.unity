@@ -2722,6 +2722,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100548829}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1159347806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1159347808}
+  - component: {fileID: 1159347807}
+  m_Layer: 0
+  m_Name: Scoreboard Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1159347807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159347806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90a02c9f92def141978d1ebb637a263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSpeed: 5
+  speedVariation: 0.5
+  angleVariation: 0.05
+  currentDirection: {x: 0, y: 0, z: 0}
+  manager: {fileID: 0}
+--- !u!4 &1159347808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159347806}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.067197, y: 3.6514912, z: -156.89552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1379975424}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202573174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,7 +3070,7 @@ GameObject:
   - component: {fileID: 1379975421}
   - component: {fileID: 1379975425}
   m_Layer: 5
-  m_Name: Scoreboard Canvas
+  m_Name: ScoreBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3103,8 +3152,8 @@ RectTransform:
   - {fileID: 978755583}
   - {fileID: 1569510153}
   - {fileID: 1924832455}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1159347808}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3123,6 +3172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6755545a070e6574383379f8e0270131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreboard: {fileID: 0}
   Player1Score: {fileID: 0}
   Player2Score: {fileID: 0}
 --- !u!1 &1391114683
@@ -3765,6 +3815,7 @@ GameObject:
   - component: {fileID: 1780255528}
   - component: {fileID: 1780255527}
   - component: {fileID: 1780255526}
+  - component: {fileID: 1780255529}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3818,8 +3869,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1780255529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780255525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6755545a070e6574383379f8e0270131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scoreboard: {fileID: 0}
+  Player1Score: {fileID: 0}
+  Player2Score: {fileID: 0}
 --- !u!1 &1802055109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1adb0a09d078fb459e6c9cc8beb867f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreboard: {fileID: 1379975425}
   startTime: 2
   ballPrefab: {fileID: 2995818213432043861, guid: 7d0fdfb67a370d2479ac61a22e8ee540, type: 3}
   spawnPositions:
